@@ -23,7 +23,7 @@ jobs:
 
       - name: Descomprimir Archivos con 7-Zip
         run: |
-          7z x FNF-PsychEngine-1.0.4.zip -o"D:\a\Knuxans-super-older-build\Knuxans-super-older-build" -y
+          7z x FNF-PsychEngine-1.0.4.zip -o"juego" -y
 
       - name: Instalar Librerías de FNF
         run: |
@@ -46,11 +46,14 @@ jobs:
       - name: Compilar Juego en Windows Real (.exe)
         run: |
           haxelib run lime setup
-          cd FNF-PsychEngine-1.0.4
+          cd juego
+          if (Test-Path "FNF-PsychEngine-1.0.4") { cd FNF-PsychEngine-1.0.4 }
           haxelib run lime build windows -release
 
       - name: Subir Juego Terminado
         uses: actions/upload-artifact@v4
         with:
           name: MiModWindows64
-          path: FNF-PsychEngine-1.0.4/export/release/windows/bin/*
+          path: |
+            juego/export/release/windows/bin/*
+            juego/FNF-PsychEngine-1.0.4/export/release/windows/bin/*
