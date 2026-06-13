@@ -18,8 +18,8 @@ jobs:
           gdown 1pfxeyLQ1i0eUS2stb304FKfMeXkn1F99
 
       - name: Descomprimir Archivos con 7-Zip
-        run: |
-          7z x FNF-PsychEngine-1.0.4.zip -o. -y
+  run: |
+    7z x FNF-PsychEngine-1.0.4.zip -o"D:\a\Knuxans-super-older-build\Knuxans-super-older-build" -y
 
       - name: Instalar Librerías de FNF
         run: |
