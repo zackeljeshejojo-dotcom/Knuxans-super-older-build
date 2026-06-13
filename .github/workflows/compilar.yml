@@ -42,9 +42,14 @@ jobs:
           haxelib git linc_luajit https://github.com/nebulazulith/linc_luajit --always
           haxelib git linc_ogg https://github.com/mobile-fnf/linc_ogg --always
           haxelib install hxCodec --always
+          
+          # Forzar activación de librerías git
+          haxelib set linc_luajit git
+          haxelib set linc_ogg git
 
       - name: Compilar Juego en Windows Real (.exe)
         run: |
+          haxelib setup C:/haxelib
           haxelib run lime setup
           cd juego
           if (Test-Path "FNF-PsychEngine-1.0.4") { cd FNF-PsychEngine-1.0.4 }
