@@ -15,7 +15,7 @@ jobs:
       - name: Descargar tu Juego Gigante desde Google Drive
         run: |
           pip install gdown
-          gdown --id 1pfxeyLQ1i0eUS2stb304FKfMeXkn1F99
+          gdown 1pfxeyLQ1i0eUS2stb304FKfMeXkn1F99
 
       - name: Descomprimir Archivos con 7-Zip
         run: |
